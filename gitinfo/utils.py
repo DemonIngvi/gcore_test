@@ -27,6 +27,13 @@ def parse_date(d):
 
 def get_git_info():
     try:
+        from os import listdir
+        from os.path import isfile, join, dirname
+        mypath= dirname('/app/')
+        print(mypath)
+        onlyfiles = [f for f in listdir(mypath)]
+        print(onlyfiles)
+
         r = git.Repo(search_parent_directories=True)
         git_resp = r.git.log(pretty=formatted_formats, n=1, date='format:%Y-%m-%dT%H:%M:%S')
         git_resp = git_resp.replace('\n', '\\n')
