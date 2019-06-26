@@ -9,8 +9,8 @@ RUN mkdir /app
 WORKDIR /app
 COPY . .
 
-RUN python3 setup.py install
-RUN python3 /app/manage.py makemigrations && python3 /app/manage.py migrate
+RUN python3 setup.py develop
+#RUN python3 /app/manage.py makemigrations && python3 /app/manage.py migrate
 
 # Make port 8080 available to the world outside this container
 EXPOSE 3000

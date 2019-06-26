@@ -6,13 +6,10 @@ REGEXP = re.compile(r"^__version__\W*=\W*'([\d.abrc]+)'")
 
 
 def read_version():
-    print('A', dirname(__file__))
     init_py = join(dirname(__file__), 'gcore', '__init__.py')
-    print(init_py)
 
     with open(init_py) as f:
         for line in f:
-            print('B', line)
             match = REGEXP.match(line)
             if match is not None:
                 return match.group(1)
@@ -22,7 +19,8 @@ def read_version():
 
 
 install_requires = [
-    'Django==2.2.2']
+    'Django==2.2.2',
+    'gitpython']
 
 
 setup(

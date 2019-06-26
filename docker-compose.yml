@@ -8,3 +8,5 @@ services:
       - ./:/code
     ports:
       - "4000:3000"
+    environment:
+        - GIT_PYTHON_REFRESH=quiet
