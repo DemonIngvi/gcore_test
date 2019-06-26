@@ -1,0 +1,10 @@
+version: '3.2'
+
+services:
+  info:
+    build: .
+    container_name: git_infi
+    volumes:
+      - ./:/code
+    ports:
+      - "4000:3000"
