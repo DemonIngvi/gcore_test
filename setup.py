@@ -19,7 +19,7 @@ def read_version():
 
 
 install_requires = [
-    'Django==2.2.2',
+    'Django==2.2.28',
     'gitpython']
 
 
